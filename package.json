@@ -1,0 +1,16 @@
+{
+  "name": "naive-bayes-classifier",
+  "version": "1.0.0",
+  "description": "An exercise from Evan Burchard's book 'Refactoring JavaScript'",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -w"
+  },
+  "keywords": [],
+  "dependencies": {
+    "deep-equal": "^2.0.3"
+  },
+  "devDependencies": {
+    "wish": "^1.0.1"
+  }
+}
