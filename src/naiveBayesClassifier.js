@@ -1,7 +1,7 @@
-fs = require('fs');
+fs = require("fs");
 
 function fileName() {
-  var theError = new Error('here I am');
+  var theError = new Error("here I am");
   return theError.stack.match(/\/(\w+\.js)\:/)[1];
 }
 
@@ -10,30 +10,30 @@ function welcomeMessage() {
 }
 
 // songs
-imagine = ['c', 'cmaj7', 'f', 'am', 'dm', 'g', 'e7'];
-somewhere_over_the_rainbow = ['c', 'em', 'f', 'g', 'am'];
-tooManyCooks = ['c', 'g', 'f'];
-iWillFollowYouIntoTheDark = ['f', 'dm', 'bb', 'c', 'a', 'bbm'];
-babyOneMoreTime = ['cm', 'g', 'bb', 'eb', 'fm', 'ab'];
-creep = ['g', 'gsus4', 'b', 'bsus4', 'c', 'cmsus4', 'cm6'];
-army = ['ab', 'ebm7', 'dbadd9', 'fm7', 'bbm', 'abmaj7', 'ebm'];
+imagine = ["c", "cmaj7", "f", "am", "dm", "g", "e7"];
+somewhere_over_the_rainbow = ["c", "em", "f", "g", "am"];
+tooManyCooks = ["c", "g", "f"];
+iWillFollowYouIntoTheDark = ["f", "dm", "bb", "c", "a", "bbm"];
+babyOneMoreTime = ["cm", "g", "bb", "eb", "fm", "ab"];
+creep = ["g", "gsus4", "b", "bsus4", "c", "cmsus4", "cm6"];
+army = ["ab", "ebm7", "dbadd9", "fm7", "bbm", "abmaj7", "ebm"];
 paperBag = [
-  'bm7',
-  'e',
-  'c',
-  'g',
-  'b7',
-  'f',
-  'em',
-  'a',
-  'cmaj7',
-  'em7',
-  'a7',
-  'f7',
-  'b',
+  "bm7",
+  "e",
+  "c",
+  "g",
+  "b7",
+  "f",
+  "em",
+  "a",
+  "cmaj7",
+  "em7",
+  "a7",
+  "f7",
+  "b",
 ];
-toxic = ['cm', 'eb', 'g', 'cdim', 'eb7', 'd7', 'db7', 'ab', 'gmaj7', 'g7'];
-bulletproof = ['d#m', 'g#', 'b', 'f#', 'g#m', 'c#'];
+toxic = ["cm", "eb", "g", "cdim", "eb7", "d7", "db7", "ab", "gmaj7", "g7"];
+bulletproof = ["d#m", "g#", "b", "f#", "g#m", "c#"];
 song_11 = [];
 
 var songs = [];
@@ -95,35 +95,40 @@ function setProbabilityOfChordsInLabels() {
   });
 }
 
-train(imagine, 'easy');
-train(somewhere_over_the_rainbow, 'easy');
-train(tooManyCooks, 'easy');
-train(iWillFollowYouIntoTheDark, 'medium');
-train(babyOneMoreTime, 'medium');
-train(creep, 'medium');
-train(paperBag, 'hard');
-train(toxic, 'hard');
-train(bulletproof, 'hard');
+train(imagine, "easy");
+train(somewhere_over_the_rainbow, "easy");
+train(tooManyCooks, "easy");
+train(iWillFollowYouIntoTheDark, "medium");
+train(babyOneMoreTime, "medium");
+train(creep, "medium");
+train(paperBag, "hard");
+train(toxic, "hard");
+train(bulletproof, "hard");
 
 setLabelProbabilities();
 setChordCountsInLabels();
 setProbabilityOfChordsInLabels();
 
 function classify(chords) {
-  var ttal = labelProbabilities;
-  console.log(ttal);
+  console.log(labelProbabilities);
   var classified = {};
-  Object.keys(ttal).forEach(function (obj) {
-    var first = labelProbabilities[obj] + 1.01;
+  Object.keys(labelProbabilities).forEach(function (difficultyLevel) {
+    var probabilityOfDifficultyLevel =
+      labelProbabilities[difficultyLevel] + 1.01;
+
     chords.forEach(function (chord) {
-      var probabilityOfChordInLabel = probabilityOfChordsInLabels[obj][chord];
-      if (probabilityOfChordInLabel === undefined) {
-        first + 1.01;
+      var probabilityOfChordInDifficultyLevel =
+        probabilityOfChordsInLabels[difficultyLevel][chord];
+
+      if (probabilityOfChordInDifficultyLevel === undefined) {
+        probabilityOfDifficultyLevel + 1.01;
       } else {
-        first = first * (probabilityOfChordInLabel + 1.01);
+        probabilityOfDifficultyLevel =
+          probabilityOfDifficultyLevel *
+          (probabilityOfChordInDifficultyLevel + 1.01);
       }
     });
-    classified[obj] = first;
+    classified[difficultyLevel] = probabilityOfDifficultyLevel;
   });
   return classified;
 }
