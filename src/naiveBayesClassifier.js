@@ -51,11 +51,7 @@ var probabilityOfChordsInLabels = {};
 function train(chords, label) {
   songs.push([label, chords]);
   labels.push(label);
-  for (var i = 0; i < chords.length; i++) {
-    if (!allChords.includes(chords[i])) {
-      allChords.push(chords[i]);
-    }
-  }
+
   if (!!Object.keys(labelCounts).includes(label)) {
     labelCounts[label] = labelCounts[label] + 1;
   } else {
