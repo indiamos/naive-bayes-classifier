@@ -1,12 +1,5 @@
-fs = require("fs");
-
-function fileName() {
-  var theError = new Error("here I am");
-  return theError.stack.match(/\/(\w+\.js)\:/)[1];
-}
-
 function welcomeMessage() {
-  return `Welcome to ${fileName()}!`;
+  return `Welcome to naiveBayesClassifier.js!`;
 }
 
 // songs
