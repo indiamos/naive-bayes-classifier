@@ -4,7 +4,7 @@ function welcomeMessage() {
 
 // songs
 const imagine = ["c", "cmaj7", "f", "am", "dm", "g", "e7"];
-const somewhere_over_the_rainbow = ["c", "em", "f", "g", "am"];
+const somewhereOverTheRainbow = ["c", "em", "f", "g", "am"];
 const tooManyCooks = ["c", "g", "f"];
 const iWillFollowYouIntoTheDark = ["f", "dm", "bb", "c", "a", "bbm"];
 const babyOneMoreTime = ["cm", "g", "bb", "eb", "fm", "ab"];
@@ -38,11 +38,10 @@ const toxic = [
   "g7",
 ];
 const bulletproof = ["d#m", "g#", "b", "f#", "g#m", "c#"];
-const song_11 = [];
+const song11 = [];
 
 var songs = [];
 var labels = [];
-var allChords = [];
 var labelCounts = [];
 var labelProbabilities = [];
 var chordCountsInLabels = {};
@@ -96,7 +95,7 @@ function setProbabilityOfChordsInLabels() {
 }
 
 train(imagine, "easy");
-train(somewhere_over_the_rainbow, "easy");
+train(somewhereOverTheRainbow, "easy");
 train(tooManyCooks, "easy");
 train(iWillFollowYouIntoTheDark, "medium");
 train(babyOneMoreTime, "medium");
