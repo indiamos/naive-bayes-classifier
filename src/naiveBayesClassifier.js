@@ -1,3 +1,5 @@
+const MAGIC_NUMBER = 1.01;
+
 function welcomeMessage() {
   return `Welcome to naiveBayesClassifier.js!`;
 }
@@ -113,18 +115,18 @@ function classify(chords) {
   var classified = {};
   Object.keys(labelProbabilities).forEach(function (difficultyLevel) {
     var probabilityOfDifficultyLevel =
-      labelProbabilities[difficultyLevel] + 1.01;
+      labelProbabilities[difficultyLevel] + MAGIC_NUMBER;
 
     chords.forEach(function (chord) {
       var probabilityOfChordInDifficultyLevel =
         probabilityOfChordsInLabels[difficultyLevel][chord];
 
       if (probabilityOfChordInDifficultyLevel === undefined) {
-        probabilityOfDifficultyLevel + 1.01;
+        probabilityOfDifficultyLevel + MAGIC_NUMBER;
       } else {
         probabilityOfDifficultyLevel =
           probabilityOfDifficultyLevel *
-          (probabilityOfChordInDifficultyLevel + 1.01);
+          (probabilityOfChordInDifficultyLevel + MAGIC_NUMBER);
       }
     });
     classified[difficultyLevel] = probabilityOfDifficultyLevel;
