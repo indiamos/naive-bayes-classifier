@@ -111,7 +111,6 @@ setChordCountsInLabels();
 setProbabilityOfChordsInLabels();
 
 function classify(chords) {
-  console.log(labelProbabilities);
   var classified = {};
   Object.keys(labelProbabilities).forEach(function (difficultyLevel) {
     var probabilityOfDifficultyLevel =
