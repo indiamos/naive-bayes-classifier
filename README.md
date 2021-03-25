@@ -12,6 +12,12 @@ This exercise is adapted from chapters 6 and 7 of _Refactoring JavaScript: Turni
 Run
 `npm test`
 
+## How to format the files
+
+This repo includes Prettier, to keep things tidy. If you don't want to [set up your editor to run Prettier for you](https://prettier.io/docs/en/editors.html), you can use it from the command line with
+
+`npm run pretty`
+
 ## What is this code supposed to do?
 
 From chapter 6 of the book:

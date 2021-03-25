@@ -4,6 +4,7 @@
   "description": "An exercise from Evan Burchard's book 'Refactoring JavaScript'",
   "main": "index.js",
   "scripts": {
+    "pretty": "npx prettier --write .",
     "test": "mocha -w"
   },
   "keywords": [],
@@ -11,6 +12,7 @@
     "deep-equal": "^2.0.3"
   },
   "devDependencies": {
+    "prettier": "2.2.1",
     "wish": "^1.0.1"
   }
 }
