@@ -3,14 +3,14 @@ function welcomeMessage() {
 }
 
 // songs
-imagine = ["c", "cmaj7", "f", "am", "dm", "g", "e7"];
-somewhere_over_the_rainbow = ["c", "em", "f", "g", "am"];
-tooManyCooks = ["c", "g", "f"];
-iWillFollowYouIntoTheDark = ["f", "dm", "bb", "c", "a", "bbm"];
-babyOneMoreTime = ["cm", "g", "bb", "eb", "fm", "ab"];
-creep = ["g", "gsus4", "b", "bsus4", "c", "cmsus4", "cm6"];
-army = ["ab", "ebm7", "dbadd9", "fm7", "bbm", "abmaj7", "ebm"];
-paperBag = [
+const imagine = ["c", "cmaj7", "f", "am", "dm", "g", "e7"];
+const somewhere_over_the_rainbow = ["c", "em", "f", "g", "am"];
+const tooManyCooks = ["c", "g", "f"];
+const iWillFollowYouIntoTheDark = ["f", "dm", "bb", "c", "a", "bbm"];
+const babyOneMoreTime = ["cm", "g", "bb", "eb", "fm", "ab"];
+const creep = ["g", "gsus4", "b", "bsus4", "c", "cmsus4", "cm6"];
+const army = ["ab", "ebm7", "dbadd9", "fm7", "bbm", "abmaj7", "ebm"];
+const paperBag = [
   "bm7",
   "e",
   "c",
@@ -25,9 +25,20 @@ paperBag = [
   "f7",
   "b",
 ];
-toxic = ["cm", "eb", "g", "cdim", "eb7", "d7", "db7", "ab", "gmaj7", "g7"];
-bulletproof = ["d#m", "g#", "b", "f#", "g#m", "c#"];
-song_11 = [];
+const toxic = [
+  "cm",
+  "eb",
+  "g",
+  "cdim",
+  "eb7",
+  "d7",
+  "db7",
+  "ab",
+  "gmaj7",
+  "g7",
+];
+const bulletproof = ["d#m", "g#", "b", "f#", "g#m", "c#"];
+const song_11 = [];
 
 var songs = [];
 var labels = [];
